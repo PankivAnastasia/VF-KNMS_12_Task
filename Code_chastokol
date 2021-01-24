@@ -1,0 +1,23 @@
+text = input("Enter text:")
+high = int(input("Enter key:"))
+
+floors = high * ['']
+f = 0
+step = 1
+
+for letter in text.replace(' ', ''):
+    if f == high - 1:
+        step = -1
+    if f == 0:
+        step = 1
+
+    floors[f] = floors[f] + letter
+    f = f + step
+
+for f in range(high):
+    line = floors[high - (f + 1)]
+    print(line, end='')
+
+
+
+
